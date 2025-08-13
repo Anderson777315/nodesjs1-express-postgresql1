@@ -1,8 +1,8 @@
 module.exports = {
-  HOST: "ep-frosty-term-ae247739-pooler.c-2.us-east-2.aws.neon.tech",
-  USER: "neondb_owner",
-  PASSWORD: "npg_KzvwM0HtTN9d",
-  DB: "neondb",
+  HOST: process.env.DB_HOST,
+  USER: process.env.DB_USER,
+  PASSWORD: process.env.DB_PASSWORD,
+  DB: process.env.DB_NAME,
   dialect: "postgres",
   
   pool: {
@@ -10,5 +10,7 @@ module.exports = {
     min: 0,
     acquire: 30000,
     idle: 10000
-  }
+  },
+
+  port: process.env.DB_PORT || 5432
 };
